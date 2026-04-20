@@ -7,7 +7,7 @@ public class SnakeGame {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Snake");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 600);
+        frame.setSize(630, 630);
         frame.add(new GamePanel());
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -226,7 +226,7 @@ class GamePanel extends JPanel {
         }
     }
     
-    private void drawStartScreen(Graphics g) {
+        private void drawStartScreen(Graphics g) {
         // Fill background with dark color
         g.setColor(new Color(30, 30, 30));
         g.fillRect(0, 0, getWidth(), getHeight());
@@ -241,15 +241,17 @@ class GamePanel extends JPanel {
         
         // Draw high score
         g.setFont(new Font("Monospaced", Font.PLAIN, 24));
+        fm = g.getFontMetrics();
         String highScoreText = "High Score: " + highScore;
         x = (getWidth() - fm.stringWidth(highScoreText)) / 2;
         g.drawString(highScoreText, x, 200);
         
         // Draw start instruction
         g.setFont(new Font("Monospaced", Font.PLAIN, 28));
+        fm = g.getFontMetrics();
         String startText = "Press SPACE to Start";
         x = (getWidth() - fm.stringWidth(startText)) / 2;
-        g.drawString(startText, x, getHeight() - 100);
+        g.drawString(startText, x, getHeight() / 2);
     }
     
     private void drawGameplay(Graphics g) {

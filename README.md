@@ -1,3 +1,0 @@
-# snake-game
-bruh???
-IDK WHATS HAPPENEINGS???
